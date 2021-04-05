@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class User extends Controller
+class UsuarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +15,8 @@ class User extends Controller
     public function index()
     {
         //
-
         return view("usuarios.crear");
 
-
-//        return view("users");
     }
 
     /**
@@ -40,7 +38,17 @@ class User extends Controller
     public function store(Request $request)
     {
         //
+        User::create([
+            'name'=>request('name'),
+            'email'=>request('email'),
+//            'tipo'=>request('tipo'),
+            'area_id'=>request('area_id'),
+            'password'=>bcrypt(\request('password')),
+        ]);
+        return redirect()->route('lista.Usuario');
     }
+
+
 
     /**
      * Display the specified resource.

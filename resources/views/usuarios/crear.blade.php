@@ -70,7 +70,7 @@
 
                                                 <br>
 
-                                                <form method="post" action="">
+                                                <form method="post" action="{{route('users.store')}}">
                                                     @csrf
                                                     <label class="block text-base text-black">
                                                         Nombre usuario<br>
@@ -88,11 +88,11 @@
                                                     <br>
 
 
-                                                    <div class="w-full ">
-                                                        {!! Form::label('tipo', 'Tipo de usuario') !!}
-                                                        {!! Form::select('tipo',[''=>'selecciona un previlegio','1'=>'Administrador','0'=>'Usuario']) !!}
+{{--                                                    <div class="w-full ">--}}
+{{--                                                        {!! Form::label('tipo', 'Tipo de usuario') !!}--}}
+{{--                                                        {!! Form::select('tipo',[''=>'selecciona un previlegio','1'=>'Administrador','0'=>'Usuario']) !!}--}}
 
-                                                    </div>
+{{--                                                    </div>--}}
 
 
                                                     <br>
@@ -104,24 +104,14 @@
                                                     {{--                                        </label>--}}
 
                                                     <div class="w-full ">
-                                                        {!! Form::label('region_id', 'region') !!}
-                                                        {!! Form::select('region_id',[''=>'selecciona uu area',
+                                                        {!! Form::label('area_id', 'Area') !!}
+                                                        {!! Form::select('area_id',[''=>'selecciona una area',
                                                                 '200'=>'TODAS',
-                                                                '20001'=>'CIUDAD IXTEPEC',
-                                                                '20002'=>'HEROICA CIUDAD DE HUAJUAPAN DE LEON',
-                                                                '20003'=>'HEROICA CIUDAD DE JUCHITAN DE ZARAGOZA',
-                                                                '20004'=>'HEROICA CIUDAD DE TLAXIACO',
-                                                                '20005'=>'HUAUTLA DE JIMENEZ',
-                                                                '20006'=>'IXTLAN DE JUAREZ',
-                                                                '20007'=>'MIAHUATLAN DE PORFIRIO DIAZ',
-                                                                '20008'=>'OAXACA DE JUAREZ',
-                                                                '20009'=>'SALINA CRUZ',
-                                                                '200010'=>'SAN JUAN BAUTISTA TUXTEPEC',
-                                                                '200011'=>'SAN PEDRO MIXTEPEC',
-                                                                '200012'=>'SANTIAGO PINOTEPA NACIONAL',
-                                                                '200013'=>'SANTO DOMINGO TEHUANTEPEC',
-                                                                '200015'=>'TEOTITLAN DE FLORES MAGON',
-                                                                '200015'=>'TLACOLULA DE MATAMOROS']) !!}
+                                                                '20001'=>'ADMINISTRACION',
+                                                                '20002'=>'DIFUCION',
+                                                                '20003'=>'FINANCIEROS',
+                                                                '20004'=>'JURIDICO'
+                                                                ]) !!}
 
                                                     </div>
 

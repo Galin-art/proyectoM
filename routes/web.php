@@ -22,7 +22,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 
-Route::get('/user', [\App\Http\Controllers\User::class,'index'])->name('usuarios');
+Route::get('/user', [\App\Http\Controllers\UsuarioController::class,'index'])->name('usuarios');
 
 //usuarios
-Route::get('/usuario',[\App\Http\Controllers\User::class,'index'])->name('lista.Usuario');
+Route::get('/usuario',[\App\Http\Controllers\UsuarioController::class,'index'])->name('lista.Usuario');
+Route::post('/',[\App\Http\Controllers\UsuarioController::class,'store'])->name('users.store');
