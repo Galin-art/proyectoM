@@ -27,3 +27,9 @@ Route::get('/user', [\App\Http\Controllers\UsuarioController::class,'index'])->n
 //usuarios
 Route::get('/usuario',[\App\Http\Controllers\UsuarioController::class,'index'])->name('lista.Usuario');
 Route::post('/',[\App\Http\Controllers\UsuarioController::class,'store'])->name('users.store');
+
+//areas
+Route::get('/administracion', [\App\Http\Controllers\AdministracionController::class,'admini'])->name('ruta.admi');
+Route::get('/difucion', [\App\Http\Controllers\AdministracionController::class,'difu'])->name('ruta.admi');
+Route::get('/financieros', [\App\Http\Controllers\AdministracionController::class,'financieros'])->name('ruta.admi');
+Route::get('/juridico', [\App\Http\Controllers\AdministracionController::class,'jurid'])->name('ruta.admi');
