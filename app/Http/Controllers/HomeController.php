@@ -4,46 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdministracionController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//        $this->middleware('isadmin',['only'=>'/user']);
-//
-//    }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('isadmin',['only'=>'/dashboard']);
+    }
 
 
 
     public function index()
     {
         //
-    }
-
-    public function admini()
-    {
-        //
-        return view('usuarios.administrativos');
-    }
-    public function difu()
-    {
-        //
-        return view('usuarios.difucion');
-    }
-    public function financieros()
-    {
-        //
-        return view('usuarios.financieros');
-    }
-    public function jurid()
-    {
-        //
-        return view('usuarios.juridico');
+        return view('dashboard');
     }
 
     /**
