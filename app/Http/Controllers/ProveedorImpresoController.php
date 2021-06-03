@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ProveedorImpreso;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class ProveedorImpresoController extends Controller
 {
@@ -141,5 +142,23 @@ class ProveedorImpresoController extends Controller
         return view('DIFUCIÓN.detalleProvedorImpresos',compact('detalleImpreso'));
 
     }
+
+
+//    genefrar pdf
+
+    public function detallesImpreso($id){
+        $detalle=ProveedorImpreso::find($id);
+        return view('DIFUCIÓN.generarPdfImpresos',compact('detalle'));
+
+    }
+
+
+    public function decargarImpresoPdf($id){
+        $detalle=ProveedorImpreso::find($id);
+        $pdf=PDF::loadView('DIFUCIÓN.generarPdfImpresos',compact('detalle'));
+        return $pdf->download('generadoImpreso.pdf');
+    }
+
+
 
 }

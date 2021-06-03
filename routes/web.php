@@ -122,3 +122,15 @@ Route::delete('ProvedorImpreso/{proveedorImpreso}',[App\Http\Controllers\Proveed
 //generar pdf
 Route::get('Provedorpdf/{id}',[App\Http\Controllers\GenerarPdfController::class,'detallesP'])->name('GenerarPdf');
 Route::get('Provedorpdfdescargado/{id}',[App\Http\Controllers\GenerarPdfController::class,'decargarPdf'])->name('GenerarPdfhecho');
+
+
+//generar pdf ompreso
+
+Route::get('ProvedorpdfImpresos/{id}',[App\Http\Controllers\ProveedorImpresoController::class,'detallesImpreso'])->name('GenerarPdfImpreso');
+Route::get('ProvedorpdfImpresosdescargado/{id}',[App\Http\Controllers\ProveedorImpresoController::class,'decargarImpresoPdf'])->name('GenerarPdfhechoImpreso');
+
+
+//generar pdf internet
+
+Route::get('ProvedorpdfInter/{id}',[App\Http\Controllers\ProveedorInterController::class,'detallesInter'])->name('GenerarPdfInter');
+Route::get('ProvedorpdfInterdescargado/{id}',[App\Http\Controllers\ProveedorInterController::class,'decargarInterPdf'])->name('GenerarPdfhechoInter');

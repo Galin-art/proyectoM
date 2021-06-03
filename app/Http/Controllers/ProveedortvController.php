@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Proveedortv;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
+
 
 class ProveedortvController extends Controller
 {
@@ -58,7 +60,7 @@ class ProveedortvController extends Controller
 
 
         ]);
-        return redirect()->route('ruta.listadifucionproveedores');
+        return redirect()->route('ruta.difucionproveedorestv');
 
 
 
@@ -144,4 +146,28 @@ class ProveedortvController extends Controller
         return view('DIFUCIÓN.detalleProvedorTv',compact('detalleTv'));
 
     }
+
+
+
+    //    genefrar pdf
+
+    public function detallesTv($id){
+        $detalle=Proveedortv::find($id);
+        return view('DIFUCIÓN.generarPdfTv',compact('detalle'));
+
+    }
+
+
+    public function decargarTvPdf($id){
+        $detalle=Proveedortv::find($id);
+        $pdf=PDF::loadView('DIFUCIÓN.generarPdfTv',compact('detalle'));
+        return $pdf->download('generadoTv.pdf');
+    }
+
+
+
+
+
+
+
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\ProveedorInter;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
+
 
 class ProveedorInterController extends Controller
 {
@@ -56,7 +58,7 @@ class ProveedorInterController extends Controller
 
 
         ]);
-        return redirect()->route('ruta.listadifucionproveedores');
+        return redirect()->route('ruta.difucionproveedoresinternet');
 
 
     }
@@ -141,4 +143,24 @@ class ProveedorInterController extends Controller
         return view('DIFUCIÓN.detalleProvedorInter',compact('detalleInter'));
 
     }
+
+    //    genefrar pdf
+
+    public function detallesInter($id){
+        $detalle=ProveedorInter::find($id);
+        return view('DIFUCIÓN.generarPdfInter',compact('detalle'));
+
+    }
+
+
+    public function decargarInterPdf($id){
+        $detalle=ProveedorInter::find($id);
+        $pdf=PDF::loadView('DIFUCIÓN.generarPdfInter',compact('detalle'));
+        return $pdf->download('generadoInternet.pdf');
+    }
+
+
+
+
+
 }
