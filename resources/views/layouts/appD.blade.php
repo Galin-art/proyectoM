@@ -24,7 +24,7 @@
 
 <body class="bg-gray-200 min-h-screen leading-none{{--esto es interlineas--}}" >
 <div id="app">
-    <nav class="bg-green-900 shadow-md py-2{{--esto de la el tamaño en paralelo--}} " >
+    <nav class="bg-red-500 shadow-md py-2{{--esto de la el tamaño en paralelo--}} " >
         <div class="container mx-auto md:px-0 {{--esto es el margen--}}">
             <div class="flex items-center justify-around"></div>
 

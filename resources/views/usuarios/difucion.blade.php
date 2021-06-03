@@ -2,4 +2,7 @@
 @section('navegacion')
     @include('iu.naveDifucion')
 
-@endsection
+@endsection 
+@section('content') 
+
+@endsection 

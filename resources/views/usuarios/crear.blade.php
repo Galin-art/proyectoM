@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 {{--                <x-jet-welcome />--}}
 
-                proyecto perron
+
 
 
 
@@ -88,11 +88,11 @@
                                                     <br>
 
 
-{{--                                                    <div class="w-full ">--}}
-{{--                                                        {!! Form::label('tipo', 'Tipo de usuario') !!}--}}
-{{--                                                        {!! Form::select('tipo',[''=>'selecciona un previlegio','1'=>'Administrador','0'=>'Usuario']) !!}--}}
+                                                    {{--                                                    <div class="w-full ">--}}
+                                                    {{--                                                        {!! Form::label('tipo', 'Tipo de usuario') !!}--}}
+                                                    {{--                                                        {!! Form::select('tipo',[''=>'selecciona un previlegio','1'=>'Administrador','0'=>'Usuario']) !!}--}}
 
-{{--                                                    </div>--}}
+                                                    {{--                                                    </div>--}}
 
 
                                                     <br>
@@ -107,15 +107,19 @@
                                                         {!! Form::label('area_id', 'Area') !!}
                                                         {!! Form::select('area_id',[''=>'selecciona una area',
                                                                 '200'=>'TODAS',
-                                                                '20001'=>'ADMINISTRACION',
-                                                                '20002'=>'DIFUCION',
-                                                                '20003'=>'FINANCIEROS',
-                                                                '20004'=>'JURIDICO'
+                                                                'ADMINISTRACION'=>'ADMINISTRACION',
+                                                                'DIFUSION'=>'DIFUSION',
+                                                                'FINANCIEROS'=>'FINANCIEROS',
+                                                                'JURIDICO'=>'JURIDICO'
                                                                 ]) !!}
 
                                                     </div>
-
-
+                                                    <BR>
+                                                    <label class="block text-base text-black">
+                                                        Puesto <br>
+                                                        <input title="text" name="puesto"
+                                                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                                    </label>
 
 
                                                     <br>
@@ -171,11 +175,14 @@
                                                     EMAIL
                                                 </th>
                                                 <th class="p-3 font-bold uppercase bg-teal-700 text-gray-900 border border-gray-300 hidden lg:table-cell">
-                                                    REGION
+                                                    PUESTO
                                                 </th>
-{{--                                                <th class="p-3 font-bold uppercase bg-teal-700 text-white border border-gray-300 hidden lg:table-cell">--}}
-{{--                                                    ACCIONES--}}
-{{--                                                </th>--}}
+                                                <th class="p-3 font-bold uppercase bg-teal-700 text-gray-900 border border-gray-300 hidden lg:table-cell">
+                                                    AREA ASIGNADA
+                                                </th>
+                                            {{--                                                <th class="p-3 font-bold uppercase bg-teal-700 text-white border border-gray-300 hidden lg:table-cell">--}}
+                                            {{--                                                    ACCIONES--}}
+                                            {{--                                                </th>--}}
 
                                             </thead>
 
@@ -198,36 +205,46 @@
                                                     </td>
                                                     <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
                                             <span
-                                                class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">id area</span>
+                                                class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">puesto</span>
+                                                        {{$userss->puesto}}
+                                                    </td>
+                                                    <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+
+                                                        <span
+                                                            class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">puesto</span>
                                                         {{$userss->area_id}}
                                                     </td>
                                                     <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                                            <span
+
+
+
+
+                                                        <span
                                                 class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">id area</span>
 
 
 
-{{--                                                        <button--}}
-{{--                                                            class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-green-500 rounded-full shadow ripple hover:shadow-lg hover:bg-green-600 focus:outline-none"--}}
-{{--                                                        >--}}
-{{--                                                            <a href="{{route('Usuario.edit',$userss)}}">editar</a>--}}
-{{--                                                        </button>--}}
+                                                        {{--                                                        <button--}}
+                                                        {{--                                                            class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-green-500 rounded-full shadow ripple hover:shadow-lg hover:bg-green-600 focus:outline-none"--}}
+                                                        {{--                                                        >--}}
+                                                        {{--                                                            <a href="{{route('Usuario.edit',$userss)}}">editar</a>--}}
+                                                        {{--                                                        </button>--}}
 
-{{--                                                        <br>--}}
-{{--                                                        <br>--}}
+                                                        {{--                                                        <br>--}}
+                                                        {{--                                                        <br>--}}
 
 
-{{--                                                        <form method="POST" action="{{route('Usuario.distroy',$userss)}}">--}}
-{{--                                                            @csrf--}}
-{{--                                                            @method('DELETE')--}}
+                                                        {{--                                                        <form method="POST" action="{{route('Usuario.distroy',$userss)}}">--}}
+                                                        {{--                                                            @csrf--}}
+                                                        {{--                                                            @method('DELETE')--}}
 
-{{--                                                            <button--}}
-{{--                                                                class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-red-600 rounded-full shadow ripple hover:shadow-lg hover:bg-red-500 focus:outline-none"--}}
-{{--                                                            >--}}
-{{--                                                                <a>Eliminar</a>--}}
-{{--                                                            </button>--}}
+                                                        {{--                                                            <button--}}
+                                                        {{--                                                                class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-red-600 rounded-full shadow ripple hover:shadow-lg hover:bg-red-500 focus:outline-none"--}}
+                                                        {{--                                                            >--}}
+                                                        {{--                                                                <a>Eliminar</a>--}}
+                                                        {{--                                                            </button>--}}
 
-{{--                                                        </form>--}}
+                                                        {{--                                                        </form>--}}
 
 
                                                     </td>

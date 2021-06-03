@@ -30,18 +30,16 @@ class isadmin
 //                return redirect('/dasboard');
                 return $next ($request);
                 break;
-            case('20001'):
+            case('ADMINISTRACION'):
                 return redirect('/administracion');
                 break;
-            case ('20002'):
+            case ('DIFUSION'):
                 return redirect('/difucion');
                 break;
-            case ('20003'):
+            case ('FINANCIEROS'):
                 return redirect('/financieros');
                 break;
-            case ('20004'):
-                return redirect('/juridico');
-                break;
+
 
         }
 

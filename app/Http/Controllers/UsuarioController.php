@@ -52,7 +52,7 @@ class UsuarioController extends Controller
         User::create([
             'name'=>request('name'),
             'email'=>request('email'),
-//            'tipo'=>request('tipo'),
+            'puesto'=>request('puesto'),
             'area_id'=>request('area_id'),
             'password'=>bcrypt(\request('password')),
         ]);

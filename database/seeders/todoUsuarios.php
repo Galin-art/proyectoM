@@ -20,7 +20,7 @@ class todoUsuarios extends Seeder
 
             'name'=>'admin',
             'email'=>'admin@gmail.com',
-//            'tipo'=>'1',
+            'puesto'=>'jefe',
             'area_id'=>'200',
             'password'=>Hash::make('admin'),
 
